@@ -1,0 +1,7 @@
+function Main.main 1
+push constant 480
+push constant 222
+call BoardGame.new 2
+pop local 0
+push constant 0
+return

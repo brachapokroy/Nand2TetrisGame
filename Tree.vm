@@ -1,0 +1,1078 @@
+function Tree.new 0
+push constant 6
+call Memory.alloc 1
+pop pointer 0
+push constant 0
+pop this 3
+push argument 0
+pop this 0
+push argument 1
+pop this 1
+push constant 480
+pop this 4
+push constant 0
+pop this 5
+push this 1
+push constant 32
+call Math.multiply 2
+push this 0
+push constant 16
+call Math.divide 2
+add
+pop this 2
+push pointer 0
+push this 0
+push this 1
+call Tree.draw 3
+pop temp 0
+push pointer 0
+return
+function Tree.getNumber 0
+push argument 0
+pop pointer 0
+push this 5
+return
+function Tree.getTemp 0
+push argument 0
+pop pointer 0
+push this 4
+return
+function Tree.draw 0
+push argument 0
+pop pointer 0
+push this 1
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+pop this 2
+push pointer 0
+call Tree.draw1 1
+pop temp 0
+push pointer 0
+call Tree.draw2 1
+pop temp 0
+push pointer 0
+call Tree.draw3 1
+pop temp 0
+push pointer 0
+call Tree.draw4 1
+pop temp 0
+push constant 0
+return
+function Tree.run2 3
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+push local 0
+not
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 0
+not
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+push this 4
+push this 1
+call Tree.draw 3
+pop temp 0
+push pointer 0
+push this 4
+push this 1
+call Tree.erase 3
+pop temp 0
+push this 4
+push constant 2
+sub
+pop this 4
+push pointer 0
+push this 4
+push this 1
+call Tree.draw 3
+pop temp 0
+push this 4
+push constant 0
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push pointer 0
+push this 4
+push this 1
+call Tree.erase 3
+pop temp 0
+push constant 480
+pop this 4
+label IF_FALSE2
+push this 4
+push argument 1
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push constant 1
+pop this 5
+label IF_FALSE3
+label IF_FALSE1
+label IF_FALSE0
+push constant 0
+return
+function Tree.run3 3
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+push local 0
+not
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push pointer 0
+push this 4
+push this 1
+call Tree.draw 3
+pop temp 0
+push pointer 0
+push this 4
+push this 1
+call Tree.erase 3
+pop temp 0
+push this 4
+push constant 2
+sub
+pop this 4
+push pointer 0
+push this 4
+push this 1
+call Tree.draw 3
+pop temp 0
+push this 4
+push constant 0
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push pointer 0
+push this 4
+push this 1
+call Tree.erase 3
+pop temp 0
+push constant 480
+pop this 4
+label IF_FALSE1
+push this 4
+push argument 1
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 1
+pop this 5
+label IF_FALSE2
+label IF_FALSE0
+push constant 0
+return
+function Tree.erase 0
+push argument 0
+pop pointer 0
+push this 1
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+pop this 2
+push pointer 0
+call Tree.erase1 1
+pop temp 0
+push pointer 0
+call Tree.erase2 1
+pop temp 0
+push pointer 0
+call Tree.erase3 1
+pop temp 0
+push pointer 0
+call Tree.erase4 1
+pop temp 0
+push constant 0
+return
+function Tree.draw1 0
+push argument 0
+pop pointer 0
+push constant 16385
+push this 2
+add
+pop this 3
+push this 3
+push constant 0
+add
+push constant 1
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 32
+add
+push constant 3
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 64
+add
+push constant 7
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 96
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 128
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 160
+add
+push constant 63
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 192
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 224
+add
+push constant 255
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 256
+add
+push constant 511
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 288
+add
+push constant 1023
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 320
+add
+push constant 2047
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 352
+add
+push constant 4095
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 384
+add
+push constant 8191
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 416
+add
+push constant 16383
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 448
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 480
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Tree.draw2 0
+push argument 0
+pop pointer 0
+push constant 16384
+push this 2
+add
+pop this 3
+push this 3
+push constant 32
+add
+push constant 16384
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 64
+add
+push constant 8192
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 96
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 128
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 160
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 192
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 224
+add
+push constant 256
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 256
+add
+push constant 128
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 288
+add
+push constant 64
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 320
+add
+push constant 32
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 352
+add
+push constant 16
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 384
+add
+push constant 8
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 416
+add
+push constant 4
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 448
+add
+push constant 2
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 480
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Tree.draw3 0
+push argument 0
+pop pointer 0
+push constant 16897
+push this 2
+add
+pop this 3
+push this 3
+push constant 0
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 32
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 64
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 96
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 128
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 160
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 192
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 224
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 256
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 288
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 320
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 352
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 384
+add
+push constant 15
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 416
+add
+push constant 31
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 448
+add
+push constant 63
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 480
+add
+push constant 127
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Tree.draw4 0
+push argument 0
+pop pointer 0
+push constant 16896
+push this 2
+add
+pop this 3
+push this 3
+push constant 0
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 32
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 64
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 96
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 128
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 160
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 192
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 224
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 256
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 288
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 320
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 352
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 384
+add
+push constant 4096
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 416
+add
+push constant 2048
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 448
+add
+push constant 1024
+neg
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 480
+add
+push constant 512
+neg
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Tree.erase1 0
+push argument 0
+pop pointer 0
+push constant 16385
+push this 2
+add
+pop this 3
+push this 3
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Tree.erase2 0
+push argument 0
+pop pointer 0
+push constant 16384
+push this 2
+add
+pop this 3
+push this 3
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Tree.erase3 0
+push argument 0
+pop pointer 0
+push constant 16897
+push this 2
+add
+pop this 3
+push this 3
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Tree.erase4 0
+push argument 0
+pop pointer 0
+push constant 16896
+push this 2
+add
+pop this 3
+push this 3
+push constant 0
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 384
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 448
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push this 3
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Tree.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return

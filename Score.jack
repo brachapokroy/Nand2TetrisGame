@@ -1,0 +1,33 @@
+class Score {
+    // current score
+    field int score;
+    constructor Score new() {
+      let score = 0; // start at 0 points
+      return this;
+    }
+  
+    method void init() {
+      // initilise score 
+      do draw();
+      return;
+    }
+  
+    method void next() {
+      // calculate new score
+        let score=score+10;
+        do draw();
+      return;
+    }
+   // draw score
+    method void draw() {
+      do Output.moveCursor(3, 46); 
+      do Output.printInt(score);
+      return;
+    }
+//disposes memory
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+      }
+    
+  }

@@ -1,0 +1,126 @@
+class BoardGame{
+    field Tree myTree0;
+    field Tree myTree1;
+    field int x,y,size;
+    field Man man;
+    field int counter;
+    field int rand;
+    field int index;
+    field int number;
+    field int key;
+    field int status;
+    field int location;
+    field int memAddress;
+    field Score score;
+    constructor BoardGame new(int Ax, int Ay) {
+        let x = Ax;
+        let y = Ay;
+        let score =Score.new();
+        let key=0;
+        let index=0;
+        let number=0;
+        let status=0;
+        let rand=randRange(5);        
+        let counter=0;
+        let myTree0=Tree.new(x,y);
+        let myTree1=Tree.new(x,y);
+        let man = Man.new(20,222);
+        do score.init();
+        do run();
+        return this;
+    }
+
+//returns a random number in the range 0...range multiplied by 100
+    method int randRange(int range) {
+        var int mask;
+        var int ret;
+        let mask = 1;
+        while (mask < range) {
+            let mask = mask * 2 + 1;
+        }
+        let ret = Random.rand() & mask;
+        while (ret > range) {
+            let ret = Random.rand() & mask;
+        }
+        return ret*100;
+    }
+
+//controlles the game flow
+  method void run(){
+    var boolean exit; 
+    var int space;
+    var int Tree0;
+    var int Tree1;
+    var int manY;
+    let exit = false;
+    let space=100;
+    do Output.printString("    score ");
+    //runs untill player fails
+    while (~exit) {
+        do Sys.wait(2);
+        do score.next();//raises player's score
+        do myTree0.run2(rand);//runs firs object of tree on screen
+        let Tree0=myTree0.getTemp();//get's location of first object tree
+        let Tree1=myTree1.getTemp();//get's location of second object tree
+        let manY=man.getTemp();//get's height of man object 
+        if (Tree0<48|Tree1<48){//check if tree is located in the man location
+            if (manY>195){  //check if man rose above tree          
+                let exit=true;//player lost, exit game
+            }
+        }
+        //checks when tree's location is equaled to the random int and changes status (index) to run the other tree object
+         let index = myTree0.getNumber();
+        if (index=1){
+            do myTree1.run3(rand);
+        }  
+
+        //waits for space char to be pressed in order to jump man
+        let key = Keyboard.keyPressed();
+        if (key = 32) {
+            let status=1;
+            if (number=0){
+                do man.run2();
+                do Sys.wait(2);
+            }
+        }
+        if(~(key = 32)){
+            if(status = 1){
+                if (number=0){
+                    do man.run2();
+                    do Sys.wait(2);
+                }
+            }
+        }
+        //takes man back down after jumping
+        let number = man.getNumber();
+        if (number=1){
+            do man.run3();//
+            do Sys.wait(2);
+            let status=0;
+        } 
+      
+      
+    }
+    do Output.moveCursor(12,27);  //print game over once the
+    do Output.printString("GAME OVER");//player lost
+    do dispose();//dispose memory 
+    return;
+  }
+//dispose memory of outside class objects
+  method void disposeObject(){
+    do score.dispose();
+    do myTree0.dispose();
+    do myTree1.dispose();
+    do man.dispose();
+    return;
+
+  }
+  //dispose memory of class
+  method void dispose(){
+    do disposeObject();
+    do Memory.deAlloc(this);
+    return;
+    
+  }
+
+}

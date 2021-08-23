@@ -1,0 +1,6 @@
+class Main{
+    function void main(){
+        var BoardGame boardGame;
+        let boardGame=BoardGame.new(480,222);
+        return;
+}}
